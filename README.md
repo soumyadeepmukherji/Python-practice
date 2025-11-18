@@ -1,5 +1,3 @@
-# Python-practice
-
 # Coding Practice Repository
 
 This repository contains my regular practice work in Python, DSA, and Django.
