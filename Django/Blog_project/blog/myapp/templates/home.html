@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>All Posts</h2>
+
+{% for post in posts %}
+    <div style="margin-bottom: 20px;">
+        <h3><a href="{% url 'details' post.slug %}">{{ post.title }}</a></h3>
+        <p>By {{ post.author.username }} • {{ post.created_at }}</p>
+        <p>{{ post.content|truncatechars:150 }}</p>
+    </div>
+{% empty %}
+    <p>No posts yet.</p>
+{% endfor %}
+
+{% endblock %}
