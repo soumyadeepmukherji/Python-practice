@@ -9,6 +9,7 @@ class Post(models.Model):
     content = models.TextField()                               # --> Content
     author = models.ForeignKey(User, on_delete=models.CASCADE) # --> Author on user created
     created_at = models.DateTimeField(auto_now_add=True)       # --> Created Time
+    image = models.ImageField(upload_to='images/', blank=True, null=True)
 
     # This Saves the Title as slug if slug field is empty
     def save(self, *args, **kwargs):

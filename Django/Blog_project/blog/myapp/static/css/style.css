@@ -1,0 +1,279 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f3f3;
+}
+
+/* Navbar */
+.navbar {
+    background: #333;
+    padding: 15px 0;
+}
+
+.navbar .logo {
+    color: #fff;
+    font-size: 22px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar .container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .menu a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+.btn {
+    background: #0077ff;
+    padding: 8px 14px;
+    border-radius: 4px;
+    color: white !important;
+}
+
+.logout {
+    color: #ff4444 !important;
+}
+
+/* Home Cards */
+.post-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.post-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.post-image {
+    width: 100%;
+    max-height: 170px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.post-title {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0077ff;
+    text-decoration: none;
+}
+
+/* Post Details */
+.detail-image {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.detail-title {
+    font-size: 32px;
+    margin-top: 20px;
+}
+
+.form-box {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.delete-btn {
+    color: #ff0000;
+    margin-left: 10px;
+}
+
+
+
+/* Full background */
+.auth-page {
+    min-height: 100vh;
+    background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&w=1200') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Glass Card */
+.auth-glass-box {
+    width: 380px;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+/* Title */
+.auth-glass-box h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 600;
+    font-size: 26px;
+}
+
+/* Form fields */
+.auth-glass-box input {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.2);
+    color: white;
+    outline: none;
+}
+
+/* Placeholder color */
+.auth-glass-box input::placeholder {
+    color: #f1f1f1;
+}
+
+/* Form labels from Django */
+.auth-glass-box label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    display: block;
+}
+
+/* Buttons */
+.auth-glass-box button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: rgba(0, 123, 255, 0.9);
+    border: none;
+    color: white;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-glass-box button:hover {
+    background: rgba(0, 90, 200, 0.9);
+}
+
+/* Links */
+.auth-links {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* Make the link white */
+.auth-links a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .auth-glass-box {
+        width: 100%;
+        padding: 25px;
+    }
+}
+
+
+.post-details {
+    max-width: 750px;
+    margin: 60px auto;
+    background: #ffffff;
+    padding: 45px 55px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    font-family: "Inter", sans-serif;
+    color: #222;
+}
+
+.detail-image {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.detail-title {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    letter-spacing: -1px;
+}
+
+.detail-content {
+    font-size: 19px;
+    line-height: 1.85;
+    color: #333;
+    white-space: pre-line;
+    margin-bottom: 40px;
+}
+
+.detail-content p {
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.post-details .btn, .delete-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    margin-right: 10px;
+    transition: 0.25s;
+}
+
+.post-details .btn {
+    background: black;
+    color: white;
+}
+
+.post-details .btn:hover {
+    background: #333;
+}
+
+.delete-btn {
+    background: #d30000;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #a00000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .post-details {
+        padding: 30px 25px;
+        margin: 30px;
+    }
+
+    .detail-title {
+        font-size: 30px;
+    }
+}
+
+

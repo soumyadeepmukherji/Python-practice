@@ -1,33 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Django Blog</title>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Blog{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
 
-    <nav>
-        <a href="{% url 'home' %}">Home</a>
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">MyBlog</a>
 
-        {% if user.is_authenticated %}
-            <a href="{% url 'create_post' %}">Create Post</a>
-            <a href="{% url 'logout' %}">Logout</a>
-            <span>Logged in as {{ user.username }}</span>
-        {% else %}
-            <a href="{% url 'login' %}">Login</a>
-            <a href="{% url 'register' %}">Register</a>
-        {% endif %}
+            <div class="menu">
+                {% if request.user.is_authenticated %}
+                    <a href="{% url 'create_post' %}" class="btn">Create Post</a>
+                    <a href="{% url 'logout' %}" class="logout">Logout</a>
+                {% else %}
+                    <a href="{% url 'login' %}" class="btn">Login</a>
+                    <a href="{% url 'register' %}" class="btn">Register</a>
+                {% endif %}
+            </div>
+        </div>
     </nav>
 
-    <hr>
-
-    {% if messages %}
-        {% for message in messages %}
-            <p style="color: green;">{{ message }}</p>
-        {% endfor %}
-    {% endif %}
-
-    {% block content %}
-    {% endblock %}
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
 
 </body>
 </html>

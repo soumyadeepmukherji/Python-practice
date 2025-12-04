@@ -21,7 +21,7 @@ class LoginForm(forms.Form):
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ["title", "content"]
+        fields = ["title", "content", 'image']
 
 # Create Comment Form to save comment
 class CommentForm(forms.ModelForm):

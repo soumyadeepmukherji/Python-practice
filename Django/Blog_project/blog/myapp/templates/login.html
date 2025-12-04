@@ -1,12 +1,37 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block title %}Login | MyBlog{% endblock %}
+
 {% block content %}
+<div class="auth-page">
 
-<h2>Login</h2>
+    <div class="auth-glass-box">
 
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-</form>
+        <h2>Login</h2>
 
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <!-- Instead of {{ form.as_p }} we loop for styling -->
+            {% for field in form %}
+                <label>{{ field.label }}</label>
+                {{ field }}
+            {% endfor %}
+
+            <button type="submit">Login</button>
+        </form>
+
+        <p class="auth-links">
+            Don't have an account? <a href="{% url 'register' %}">Register</a>
+        </p>
+
+    </div>
+
+</div>
 {% endblock %}

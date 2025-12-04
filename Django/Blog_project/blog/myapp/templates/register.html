@@ -1,12 +1,36 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block title %}Register | MyBlog{% endblock %}
+
 {% block content %}
+<div class="auth-page">
 
-<h2>Register</h2>
+    <div class="auth-glass-box">
 
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Register</button>
-</form>
+        <h2>Create Account</h2>
 
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+
+            {% for field in form %}
+                <label>{{ field.label }}</label>
+                {{ field }}
+            {% endfor %}
+
+            <button type="submit">Register</button>
+        </form>
+
+        <p class="auth-links">
+            Already have an account? <a href="{% url 'login' %}">Login</a>
+        </p>
+
+    </div>
+
+</div>
 {% endblock %}
