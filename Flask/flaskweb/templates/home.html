@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+    <section class="hero">
+    {% if heading %}
+        <h1>{{heading}}</h1>
+    {% else %}
+      <h1>Minimal Homepage</h1>
+    {% endif %}
+      <p>
+        A simple, clean starting point for your website.
+        Customize it as you like.
+      </p>
+      <button>Get Started</button>
+    </section>
+
+    <section class="blog-section">
+        <h2>Latest Articles</h2>
+
+        <div class="blog-grid">
+            {% for post in posts %}
+            <article class="blog-card">
+            <span>{{post.publish_date}}</span>
+            <h3>{{post.title}}</h3>
+            <p>
+                {{post.text}}
+            </p>
+            <a href="{{post.post_id}}">Read more →</a>
+            </article>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
+

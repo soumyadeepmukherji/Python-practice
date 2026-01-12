@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
+
+</head>
+<body>
+
+  <header>
+    <strong>Brand</strong>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+      <div class="alert-{{category}}" style="background-color: green; color: white;">
+        {{message}}
+      </div>
+      {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    {% block content %} {% endblock %}
+  </main>
+
+  <footer>
+    © 2026 Brand Name
+  </footer>
+
+</body>
+</html>

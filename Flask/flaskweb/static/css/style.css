@@ -1,0 +1,382 @@
+  /* Style Sheet 
+  ===================
+  Created : Soumyadeep
+  Date : 6th jan 2026
+  description : Contains main css of the site 
+  */
+
+/* Common Style Starts */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      color: #222;
+      background: #fafafa;
+      line-height: 1.6;
+    }
+/* Common Style Ends */
+
+/* Header Style Starts */
+    header {
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+    }
+
+    header a {
+      text-decoration: none;
+      color: #222;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+/* Header Style Ends */
+
+/* Hero Section style */
+    .hero {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      max-width: 500px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .hero button {
+      padding: 12px 24px;
+      border: none;
+      background: #000;
+      color: #fff;
+      cursor: pointer;
+      font-size: 14px;
+    }
+/* Hero Section style */
+
+/* Blog Listing Style */
+    .blog-section {
+        max-width: 1100px;
+        margin: 80px auto;
+        padding: 0 20px;
+    }
+
+    .blog-section h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+    }
+
+    .blog-card {
+        background: #fff;
+        border: 1px solid #eee;
+        padding: 20px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .blog-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    .blog-card span {
+        font-size: 12px;
+        color: #777;
+    }
+
+    .blog-card h3 {
+        margin: 10px 0;
+        font-size: 1.25rem;
+    }
+
+    .blog-card p {
+        color: #555;
+        font-size: 14px;
+        margin-bottom: 16px;
+    }
+
+    .blog-card a {
+        text-decoration: none;
+        font-size: 14px;
+        color: #000;
+        font-weight: 500;
+    }
+/* Blog Listing Style */
+
+/* About Page Style */
+    .about {
+      max-width: 800px;
+      margin: 80px auto;
+      padding: 0 20px;
+    }
+
+    .about h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      color: #555;
+      margin-bottom: 16px;
+    }
+
+    .about .highlight {
+      margin-top: 30px;
+      padding: 20px;
+      background: #fff;
+      border-left: 4px solid #000;
+    }
+/* About Page Style */
+
+/* Contact page */
+    .contact {
+      max-width: 700px;
+      margin: 80px auto;
+      padding: 0 20px;
+    }
+
+    .contact h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .contact p {
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    form {
+      background: #fff;
+      padding: 30px;
+      border: 1px solid #eee;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    button {
+      padding: 12px 24px;
+      border: none;
+      background: #000;
+      color: #fff;
+      font-size: 14px;
+      cursor: pointer;
+    }
+/* Contact page */
+
+/* Footer Style Starts */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #777;
+    }
+/* Footer Style Starts */
+
+/* Login Page */
+  .login-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
+    padding: 20px;
+  }
+
+  .login-box {
+    width: 100%;
+    max-width: 400px;
+    background: #fff;
+    padding: 32px;
+    border: 1px solid #eee;
+  }
+
+  .login-box h1 {
+    font-size: 1.75rem;
+    margin-bottom: 8px;
+  }
+
+  .login-box p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 24px;
+  }
+
+  .login-wrapper .form-group {
+    margin-bottom: 18px;
+  }
+
+  .login-wrapper label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .login-wrapper input {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+  }
+
+  .login-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .login-actions a {
+    text-decoration: none;
+    color: #000;
+  }
+
+  .login-wrapper button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #000;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .login-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  .login-footer a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+  }
+/* Login Page */
+
+/* Registartion Page */
+  .register-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
+    padding: 20px;
+  }
+
+  .register-box {
+    width: 100%;
+    max-width: 420px;
+    background: #fff;
+    padding: 32px;
+    border: 1px solid #eee;
+  }
+
+  .register-box h1 {
+    font-size: 1.75rem;
+    margin-bottom: 8px;
+  }
+
+  .register-box p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 24px;
+  }
+
+  .register-box .form-group {
+    margin-bottom: 18px;
+  }
+
+  .register-box  label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .register-box  input {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+  }
+
+  .terms {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .terms a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .register-box  button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #000;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .register-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  .register-footer a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+  }
+
+/* Registartion Page */
