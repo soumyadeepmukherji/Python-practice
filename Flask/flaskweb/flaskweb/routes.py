@@ -1,15 +1,7 @@
 from flask import Flask, render_template, url_for, flash, redirect
-from forms import RegistrationForm, LoginForm
-from flask_sqlalchemy import SQLAlchemy
-from models import User, Post
-
-app = Flask(__name__)
-
-# Configiration
-app.config['SECRET_KEY'] = 'cb379004254134eeaac465f53f38def8'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
-
-db = SQLAlchemy(app)
+from flaskweb.forms import RegistrationForm, LoginForm
+from flaskweb.models import User, Post
+from flaskweb import app
 
 posts = [
     {
@@ -60,6 +52,3 @@ def registerView():
 def loginView():
     loginform = LoginForm()
     return render_template('login.html', form=loginform)
-
-if __name__ == '__main__':
-    app.run(debug=True)

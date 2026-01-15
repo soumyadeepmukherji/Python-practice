@@ -1,5 +1,5 @@
 from datetime import datetime
-from app import db
+from flaskweb import db
 
 # Create Models
 class User(db.Model):
