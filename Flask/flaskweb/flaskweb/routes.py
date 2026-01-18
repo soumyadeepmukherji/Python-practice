@@ -1,7 +1,8 @@
 from flask import Flask, render_template, url_for, flash, redirect
 from flaskweb.forms import RegistrationForm, LoginForm
 from flaskweb.models import User, Post
-from flaskweb import app
+from flaskweb import app, db, bcrypt
+from flask_login import login_user, current_user, logout_user
 
 posts = [
     {
@@ -42,13 +43,42 @@ def contact():
 
 @app.route("/register", methods=['GET','POST'])
 def registerView():
+    # If Authenticated Redirect to home
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
+
     form = RegistrationForm()
     if form.validate_on_submit():
+
+        hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
+        bcrypt.check_password_hash(hashed_password,form.password.data)
+
+        user = User(username = form.username.data, email = form.email.data, password = hashed_password)
+        db.session.add(user)
+        db.session.commit()
+  
         flash (f'Account Created for {form.username.data}!', 'success')
         return redirect(url_for('home'))
+    print(form.errors) 
     return render_template('register.html', form=form)
 
-@app.route("/login")
+@app.route("/login" , methods=['GET','POST'])
 def loginView():
     loginform = LoginForm()
+
+    if loginform.validate_on_submit():
+        user = User.query.filter_by(email=loginform.email.data).first()
+
+        if user and bcrypt.check_password_hash(user.password, loginform.password.data):
+            login_user(user, remember=loginform.remember.data)
+            return redirect(url_for('home'))
+        else:
+            flash("Login unsuccessful. Please check email and password.", "danger")
+
     return render_template('login.html', form=loginform)
+
+@app.route("/logout")
+def logout():
+    logout_user()
+    return redirect(url_for('home'))
+
