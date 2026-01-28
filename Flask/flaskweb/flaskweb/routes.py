@@ -2,7 +2,7 @@ from flask import Flask, render_template, url_for, flash, redirect
 from flaskweb.forms import RegistrationForm, LoginForm
 from flaskweb.models import User, Post
 from flaskweb import app, db, bcrypt
-from flask_login import login_user, current_user, logout_user
+from flask_login import login_user, current_user, logout_user, login_required
 
 posts = [
     {
@@ -81,3 +81,9 @@ def loginView():
 def logout():
     logout_user()
     return redirect(url_for('home'))
+
+@app.route("/account")
+@login_required
+def account():
+    image_file = url_for('static', filename='images/'+ current_user.image_file)
+    return render_template('dashbord.html', title='Account', image_file=image_file)
