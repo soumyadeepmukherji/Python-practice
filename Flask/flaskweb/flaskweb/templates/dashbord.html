@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+{% block content %}
+<main class="user-dashboard">
+  <h1>Welcome, John 👋</h1>
+  <p class="subtitle">Here’s a summary of your activity</p>
+
+  <!-- Quick Stats -->
+  <section class="user-cards">
+    <div class="user-card">
+      <span>Tasks Completed</span>
+      <h2>18</h2>
+    </div>
+
+    <div class="user-card">
+      <span>Pending Tasks</span>
+      <h2>5</h2>
+    </div>
+
+    <div class="user-card">
+      <span>Monthly Goals</span>
+      <h2>3 / 5</h2>
+    </div>
+
+    <div class="user-card">
+      <span>Performance</span>
+      <h2>Good</h2>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="dashboard-grid">
+    <!-- Tasks -->
+    <div class="panel">
+      <h3>My Tasks</h3>
+
+      <ul class="task-list">
+        <li>
+          Follow up with client
+          <span>Due today</span>
+        </li>
+        <li>
+          Prepare monthly report
+          <span>Due in 2 days</span>
+        </li>
+        <li>
+          Update CRM data
+          <span>Due this week</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Activity -->
+    <div class="panel">
+      <h3>Recent Activity</h3>
+
+      <ul class="activity">
+        <li>
+          Task marked as completed
+          <br />
+          <span>30 minutes ago</span>
+        </li>
+        <li>
+          Profile updated
+          <br />
+          <span>Yesterday</span>
+        </li>
+        <li>
+          New goal added
+          <br />
+          <span>2 days ago</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+{% endblock content %}
